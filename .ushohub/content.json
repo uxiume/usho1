@@ -9,7 +9,16 @@
   "ownerName": "uxiume",
   "defaultLocale": "zh-CN",
   "supportedLocales": [
-    "zh-CN"
+    "zh-CN",
+    "en",
+    "ja",
+    "ko",
+    "fr",
+    "de",
+    "es",
+    "pt",
+    "ru",
+    "ar"
   ],
   "theme": "usho-default"
 }
