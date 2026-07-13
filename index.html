@@ -25,23 +25,27 @@
         <span>usho1</span>
       </a>
       <div class="header-actions">
-        <button id="ripple-toggle" type="button" aria-label="切换水波纹">≋ <span>Ripple</span></button>
-        <button id="theme-toggle" type="button" aria-label="切换颜色模式">◐ <span>Theme</span></button>
+        <label class="language-control">
+          <span class="sr-only">Language</span>
+          <select id="language-select" aria-label="Language"><option value="zh-CN" selected>中文</option><option value="en">English</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="es">Español</option><option value="pt">Português</option><option value="ru">Русский</option><option value="ar">العربية</option></select>
+        </label>
+        <button id="ripple-toggle" type="button" aria-label="切换水波纹">≋ <span id="ripple-label">Ripple</span></button>
+        <button id="theme-toggle" type="button" aria-label="切换颜色模式">◐ <span id="theme-label">Theme</span></button>
       </div>
     </header>
 
     <main>
       <section class="hero">
         <div class="hero-copy">
-          <p class="eyebrow">USHO 默认主题</p>
+          <p class="eyebrow" data-i18n="eyebrow">USHO 默认主题</p>
           <h1>usho1</h1>
-          <p class="intro">记录思考、生活与持续发生的变化。</p>
+          <p class="intro" data-i18n="intro">记录思考、生活与持续发生的变化。</p>
           <div class="author"><span></span>uxiume</div>
         </div>
         <aside class="hero-preview">
           <span>01 / USHO</span>
-          <strong>欢迎来到我的博客</strong>
-          <p>这个博客由 UshoHub 创建。你可以在 UshoHub 中编辑内容、管理语言并发布新的文章。</p>
+          <strong data-i18n="welcome">欢迎来到我的博客</strong>
+          <p data-i18n="excerpt">这个博客由 UshoHub 创建。你可以在 UshoHub 中编辑内容、管理语言并发布新的文章。</p>
         </aside>
       </section>
 
@@ -49,7 +53,7 @@
         <div class="section-heading">
           <div>
             <p class="eyebrow">INDEX</p>
-            <h2>博客文章</h2>
+            <h2 data-i18n="latest">博客文章</h2>
           </div>
           <span>1</span>
         </div>
@@ -57,12 +61,12 @@
           <div class="post-index">01</div>
           <div>
             <p class="post-meta">UshoHub · 4 min</p>
-            <h3>欢迎来到我的博客</h3>
-            <p>这个博客由 UshoHub 创建。你可以在 UshoHub 中编辑内容、管理语言并发布新的文章。</p>
+            <h3 data-i18n="welcome">欢迎来到我的博客</h3>
+            <p data-i18n="excerpt">这个博客由 UshoHub 创建。你可以在 UshoHub 中编辑内容、管理语言并发布新的文章。</p>
           </div>
-          <a href="./posts/welcome/">阅读全文 →</a>
+          <a href="./posts/welcome/"><span data-i18n="read">阅读全文</span> →</a>
         </article>
-        <div class="empty-note">更多内容正在准备中</div>
+        <div class="empty-note" data-i18n="empty">更多内容正在准备中</div>
       </section>
     </main>
 
