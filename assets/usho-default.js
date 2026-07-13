@@ -2,12 +2,10 @@
   var root = document.documentElement;
   var themeButton = document.getElementById("theme-toggle");
   var rippleButton = document.getElementById("ripple-toggle");
-  var waterLayer = document.querySelector(".water-layer");
   var languageSelect = document.getElementById("language-select");
   var rippleLabel = document.getElementById("ripple-label");
   var themeLabel = document.getElementById("theme-label");
   var modes = ["system", "light", "dark"];
-  var lastRipple = 0;
   var labels = {
     "zh-CN": { ripple: "水波纹", theme: "颜色模式", eyebrow: "USHO 默认主题", intro: "记录思考、生活与持续发生的变化。", latest: "博客文章", welcome: "欢迎来到我的博客", excerpt: "这个博客由 UshoHub 创建。你可以在 UshoHub 中编辑内容、管理语言并发布新的内容。", read: "阅读全文", empty: "更多内容正在准备中" },
     en: { ripple: "Ripple", theme: "Theme", eyebrow: "USHO DEFAULT THEME", intro: "A place for notes, ideas, and everything that keeps changing.", latest: "Latest writing", welcome: "Welcome to my blog", excerpt: "This blog was created with UshoHub. Use UshoHub to edit, manage languages, and publish new content.", read: "Read more", empty: "More content is on the way" },
@@ -64,29 +62,7 @@
       rippleEnabled = !rippleEnabled;
       localStorage.setItem("usho-ripple", rippleEnabled ? "on" : "off");
       rippleButton.setAttribute("aria-pressed", String(rippleEnabled));
-      if (!rippleEnabled && waterLayer) waterLayer.replaceChildren();
+      window.dispatchEvent(new CustomEvent("usho:ripple-change", { detail: rippleEnabled }));
     });
   }
-
-  function createRipple(event, strong) {
-    if (!rippleEnabled || !waterLayer) return;
-    if (event.target.closest("a, button, input, textarea, select")) return;
-    var ring = document.createElement("i");
-    ring.style.left = event.clientX + "px";
-    ring.style.top = event.clientY + "px";
-    if (!strong) ring.style.opacity = "0.55";
-    waterLayer.appendChild(ring);
-    ring.addEventListener("animationend", function () { ring.remove(); });
-  }
-
-  document.addEventListener("pointermove", function (event) {
-    var now = Date.now();
-    if (now - lastRipple < 90) return;
-    lastRipple = now;
-    createRipple(event, false);
-  });
-
-  document.addEventListener("pointerdown", function (event) {
-    createRipple(event, true);
-  });
 })();
