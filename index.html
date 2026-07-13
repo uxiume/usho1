@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#08141d" />
+    <title>usho1</title>
+    <meta name="description" content="记录思考、生活与持续发生的变化。" />
+    <link rel="stylesheet" href="./assets/usho-default.css" />
+    <script>
+      (function () {
+        var saved = localStorage.getItem("usho-color-mode") || "system";
+        var dark = saved === "dark" || (saved === "system" && matchMedia("(prefers-color-scheme: dark)").matches);
+        document.documentElement.dataset.theme = dark ? "dark" : "light";
+        document.documentElement.dataset.mode = saved;
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="water-layer" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="usho1">
+        <span class="brand-mark">~/</span>
+        <span>usho1</span>
+      </a>
+      <div class="header-actions">
+        <button id="ripple-toggle" type="button" aria-label="切换水波纹">≋ <span>Ripple</span></button>
+        <button id="theme-toggle" type="button" aria-label="切换颜色模式">◐ <span>Theme</span></button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">USHO 默认主题</p>
+          <h1>usho1</h1>
+          <p class="intro">记录思考、生活与持续发生的变化。</p>
+          <div class="author"><span></span>uxiume</div>
+        </div>
+        <aside class="hero-preview">
+          <span>01 / USHO</span>
+          <strong>欢迎来到我的博客</strong>
+          <p>这个博客由 UshoHub 创建。你可以在 UshoHub 中编辑内容、管理语言并发布新的文章。</p>
+        </aside>
+      </section>
+
+      <section class="writing">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">INDEX</p>
+            <h2>博客文章</h2>
+          </div>
+          <span>1</span>
+        </div>
+        <article class="post-card">
+          <div class="post-index">01</div>
+          <div>
+            <p class="post-meta">UshoHub · 4 min</p>
+            <h3>欢迎来到我的博客</h3>
+            <p>这个博客由 UshoHub 创建。你可以在 UshoHub 中编辑内容、管理语言并发布新的文章。</p>
+          </div>
+          <a href="./posts/welcome/">阅读全文 →</a>
+        </article>
+        <div class="empty-note">更多内容正在准备中</div>
+      </section>
+    </main>
+
+    <footer>
+      <span>usho1</span>
+      <a href="https://uxiume.github.io/usho/" rel="noreferrer">Managed with UshoHub</a>
+    </footer>
+    <script src="./assets/usho-default.js"></script>
+  </body>
+</html>
