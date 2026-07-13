@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "app": "UshoHub",
+  "blogId": "1783902621937",
+  "role": "public-site",
+  "repository": "usho1",
+  "sourceRepository": "usho1-source",
+  "blogName": "usho1",
+  "ownerName": "uxiume",
+  "defaultLocale": "zh-CN",
+  "supportedLocales": [
+    "zh-CN"
+  ],
+  "theme": "usho-default"
+}
